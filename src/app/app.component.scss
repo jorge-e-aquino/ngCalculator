@@ -1,0 +1,44 @@
+.app {
+  background-color: rgb(32, 32, 32);
+
+  font-family: monospace;
+  font-size: large;
+
+  width: 400px;
+  height: 600px;
+
+  border: none;
+  border-radius: 5%;
+
+  padding-top: 30px;
+
+  box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+    0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+.centered {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+}
+
+app-number-pad {
+  display: flex;
+  flex-flow: row wrap;
+  flex-grow: 1;
+  justify-content: center;
+  justify-items: center;
+  align-content: flex-end;
+  align-items: flex-end;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+
+  margin-top: -150px;
+}

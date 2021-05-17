@@ -1,0 +1,18 @@
+.field {
+  text-align: center;
+  height: 60px;
+  font-size: 20pt;
+
+  &:after {
+    content: ".";
+    visibility: hidden;
+  }
+}
+
+#input {
+  background-color: yellow;
+}
+
+#output {
+  background-color: white;
+}

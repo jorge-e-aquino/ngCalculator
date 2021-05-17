@@ -1,0 +1,45 @@
+button {
+  position: relative;
+  z-index: 1;
+  margin: 5px;
+
+  height: 60px;
+  width: 115px;
+
+  font-family: monospace;
+  font-size: 30pt;
+
+  border: none;
+  border-radius: 5%;
+
+  box-shadow:
+    0 2.8px 2.2px rgba(0, 0, 0, 0.6),
+    0 6.7px 5.3px rgba(0, 0, 0, 1);
+
+  &:hover {
+    opacity: 80%;
+  }
+
+}
+
+.operator {
+  width: 84px;
+  background-color: orange;
+}
+
+.all-clear {
+  background-color: lightsteelblue;
+}
+
+.input-clear {
+  background-color: lightsteelblue;
+}
+
+.ans {
+  background-color: lightsteelblue;
+}
+
+.enter {
+  width: 115px;
+  background-color: orange;
+}
