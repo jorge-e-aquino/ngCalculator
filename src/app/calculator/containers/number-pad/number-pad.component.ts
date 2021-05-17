@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import KEYS from './keys';
 
 // handles the button generation and logic and passes data to the app root
 @Component({
@@ -9,7 +10,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: []
 })
 export class NumberPadComponent implements OnInit {
-  keys: any[];
+  keys: {label: string, case: string}[];
   formula: {input: string, result: string} = {
     input: '',
     result: ''
@@ -20,30 +21,7 @@ export class NumberPadComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.keys = [
-      {label: 'AC', case: 'all-clear'},
-      {label: 'C', case: 'input-clear'},
-      {label: 'ANS', case: 'ans'},
-
-      {label: '+', case: 'operator'},
-      {label: '-', case: 'operator'},
-      {label: '*', case: 'operator'},
-      {label: '/', case: 'operator'},
-
-      {label: '1', case: 'key'},
-      {label: '2', case: 'key'},
-      {label: '3', case: 'key'},
-      {label: '4', case: 'key'},
-      {label: '5', case: 'key'},
-      {label: '6', case: 'key'},
-      {label: '7', case: 'key'},
-      {label: '8', case: 'key'},
-      {label: '9', case: 'key'},
-      {label: '.', case: 'key'},
-      {label: '0', case: 'key'},
-
-      {label: '=', case: 'enter'}
-    ];
+    this.keys = KEYS;
   }
 
   press(button: string, aCase: string): void {
@@ -65,10 +43,12 @@ export class NumberPadComponent implements OnInit {
       case 'all-clear':
         this.formula.input = (this.formula.input).substring(this.formula.input.length);
         this.formula.result = (this.formula.result).substring(this.formula.result.length);
+        console.log('ALL cleared');
         this.sendMessage();
         break;
       case 'input-clear':
         this.formula.input = (this.formula.input).substring(this.formula.input.length);
+        console.log('input cleared');
         this.sendMessage();
         break;
     }
@@ -76,14 +56,14 @@ export class NumberPadComponent implements OnInit {
 
   enter(): void {
     try {
+      this.formula.result = (this.formula.result).substring(this.formula.result.length);
       // tslint:disable-next-line: no-eval
-      this.formula.result += eval(this.formula.input);
+      this.formula.result += (+eval(this.formula.input).toFixed(2)).toString();
       this.formula.input = (this.formula.input).substring(this.formula.input.length);
       this.sendMessage();
     } catch {
       console.log('Try again!');
     }
-    this.formula.result = (this.formula.result).substring(this.formula.result.length);
   }
 
   sendMessage(): void {

@@ -15,8 +15,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class DisplayComponent implements OnInit {
 
-  @Input() input;
-  @Input() result;
+  @Input() input: string;
+  @Input() result: string;
 
   constructor() { }
 

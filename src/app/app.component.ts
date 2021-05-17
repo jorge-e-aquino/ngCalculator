@@ -4,31 +4,15 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-  <div class="app centered">
-    <app-display [input]="input" [result]="result"></app-display>
-    <app-number-pad (messageEvent)="receiveMessage($event)"></app-number-pad>
-  </div>
+  <router-outlet></router-outlet>
   `,
-  styleUrls: ['./app.component.scss']
+  styleUrls: []
 })
 export class AppComponent  {
-  title = 'ngCalculator';
-  json: string;
-  parse: {input: string, result: string};
-  input: string;
-  result: string;
-
   constructor() {
-    console.log(this.json);
+    console.log("app constructed");
   }
 
-  receiveMessage($event): void {
-    this.json = $event;
-    this.parse = JSON.parse(this.json);
-    this.input = this.parse.input;
-    this.result = this.parse.result;
-    console.log('receive message json in app', this.json, 'parsed:', this.parse);
-  }
 }
 
 // by Jorge Aquino 5/16/2021 jaquino7@gatech.edu https://aquino.design

@@ -1,12 +1,8 @@
 .field {
+  font-family: Digital;
   text-align: center;
   height: 60px;
-  font-size: 20pt;
-
-  &:after {
-    content: ".";
-    visibility: hidden;
-  }
+  font-size: 45pt;
 }
 
 #input {
