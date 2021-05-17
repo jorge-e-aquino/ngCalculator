@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "ngCalculator"
+  "defaultProject": "ngCalculator",
+  "cli": {
+    "analytics": false
+  }
 }
