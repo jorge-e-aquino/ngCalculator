@@ -1,6 +1,6 @@
 # NgCalculator
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.0 by Jorge Aquino. Make sure you do `npm install` to install everything you might not have! I didn't import any external modules so if you just have the CLI it should hopefully work.
 
 ## Development server
 
