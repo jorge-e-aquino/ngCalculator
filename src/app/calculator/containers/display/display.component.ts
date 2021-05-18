@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-// consists of two fields which display the input and output text, gets this string data from the app root
+// consists of two fields which display the input and output text--gets this data from the calculator component
 @Component({
   selector: 'app-display',
   template: `

@@ -22,4 +22,5 @@ const KEYS = [
 
   {label: '=', case: 'enter'}
 ];
+
 export default KEYS;
