@@ -28,7 +28,7 @@ export class CalculatorComponent implements OnInit {
     this.parse = JSON.parse(this.json);
     this.input = this.parse.input;
     this.result = this.parse.result;
-    console.log('receive message json in calculator', this.json, 'parsed:', this.parse);
+    console.log('receive message json in calculator, parsed as:', this.parse);
   }
 
 }

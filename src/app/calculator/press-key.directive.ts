@@ -4,11 +4,11 @@ import { Directive, HostListener } from '@angular/core';
   selector: '[appPressKey]'
 })
 export class PressKeyDirective {
-  method = 0;
+  clicks = 0;
 
   @HostListener('click', ['$event.target'])
   onClick(btn): void {
-    console.log('button', btn, 'number of clicks', this.method++);
+    console.log('press-key directive: button' + btn.innerHTML + '// number of clicks:', this.clicks++);
   }
 
 }

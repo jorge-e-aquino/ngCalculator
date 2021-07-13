@@ -39,6 +39,7 @@ export class NumberPadComponent implements OnInit {
       case 'enter':
         console.log('entering...', this.formula.input);
         this.enter();
+        console.log('CALCULATION DONE \n************************************\n************************************');
         break;
       case 'all-clear':
         this.formula.input = (this.formula.input).substring(this.formula.input.length);
@@ -69,7 +70,6 @@ export class NumberPadComponent implements OnInit {
   sendMessage(): void {
     const json = JSON.stringify(this.formula);
     this.messageEvent.emit(json);
-    console.log('send message json in numberpad', json);
+    console.log('send message json in numberpad, stringified as:', json);
   }
-
 }
